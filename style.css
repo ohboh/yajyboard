@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+html, body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Roboto;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 30vh auto;
+    grid-auto-rows: 10vh auto;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar content"
+}
+
+.sidebar-container {
+    background-color: aqua;
+    grid-area: sidebar;
+    padding-left: 2vh;
+    padding-top: 2vh;
+    display: grid;
+    grid-template-columns: 4vh;
+    grid-auto-rows: 8vh;
+    grid-template-areas:
+    "sidebar-logo sidebar-title"
+    "sidebar-content sidebar-content";
+}
+
+.sidebar-logo {
+    grid-area: sidebar-logo;
+}
+
+.sidebar-title {
+    font-size: 25px;
+    font-weight: 600;
+    grid-area: sidebar-title;
+}
+
+
+.sidebar {
+    grid-area: sidebar-content;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    height: 100%;
+}
+
+.sidebar-element {
+    display: flex;
+    column-gap: 1vh;
+    align-items: center;
+}
+
+
+.header-container {
+    background-color: pink;
+    grid-area: header;
+    display: grid;
+    grid-template-areas:
+    "searchbar preview"
+    "bottom bottom";
+    width: 100%;
+    justify-content: space-between;
+}
+
+.searchbar-container {
+    grid-area: searchbar;
+}
+
+.preview-container {
+    grid-area: preview;
+}
+
+.bottom-header-container {
+    grid-area: bottom;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-header-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.content-container {
+    background-color: brown;
+    grid-area: content;
+}
+
+.card {
+    background-color: white;
+    height: 10vh;
+    width: 8vh;
+    margin-bottom: 2px;
+}

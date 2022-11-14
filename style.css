@@ -13,7 +13,7 @@ html, body {
 body {
     display: grid;
     grid-template-columns: 30vh auto;
-    grid-auto-rows: 14vh auto;
+    grid-auto-rows: 15vh auto;
     grid-template-areas: 
     "sidebar header"
     "sidebar content"
@@ -22,6 +22,7 @@ body {
 img {
     aspect-ratio: 1/1;
 }
+
 
 .sidebar-container {
     background-color: #0097ec;
@@ -39,10 +40,12 @@ img {
     grid-template-areas:
     "sidebar-logo sidebar-title"
     "sidebar-content sidebar-content";
+    align-items: center;
 }
 
 .sidebar-logo {
     grid-area: sidebar-logo;
+    height: 32px;
 }
 
 .sidebar-title {
@@ -59,9 +62,9 @@ img {
     flex-direction: column;
     gap: 4vh;
     height: 100%;
-    margin-top: 10vh;
-    margin-left: 3vh;
-    position:absolute
+    margin-top: 30vh;
+    margin-left: 2vh;
+    position:absolute;
 }
 
 .sidebar-element {
@@ -75,23 +78,26 @@ img {
 } 
 
 .sidebar-element:hover {
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
     -webkit-transition: -webkit-transform 0.1s;
     -moz-transition: -moz-transform 0.1s;
     -ms-transition:  -ms-transform 0.1s;
     transition:  transform 0.1s;
 }
 
+.sidebar-icon {
+    height: 30px;
+}
 
 
 .header-container {
     background-color: #004bc0 ;
     color: #d569f6;
     border: solid 8px #0097ec  ;
-    padding: 4px 60px;
+    padding: 8px 60px;
     grid-area: header;
     display: grid;
     grid-template-areas:
@@ -102,6 +108,42 @@ img {
 
 .searchbar-container {
     grid-area: searchbar;
+    display: flex;
+    align-items: center;
+    column-gap: 3vh;
+    position: absolute;
+}
+
+.search-button {
+    height: 25px;
+}
+
+.searchbar {
+    width: 80vh;
+    border: solid 4px #d569f6;
+    padding: 0.5vh 2vh;
+    background-color: #ffbcff;
+    font-family: "Press Start 2P";
+    color: #040026;
+    outline: none;
+}
+
+input {
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
+} 
+
+input:hover, input:focus {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
 }
 
 .preview-container {
@@ -112,9 +154,32 @@ img {
     column-gap: 4vh;
 }
 
-.preview-images {
+.bell {
+    height: 30px;
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
+} 
+.bell:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
+}
+
+
+.small-profile-picture {
     height: 40px;
     border: solid 2px #d569f6;
+}
+
+.header-name {
+    font-size: 24px;
 }
 
 .bottom-header-container {
@@ -143,14 +208,42 @@ img {
 
 .big-profile-picture {
     height: 56px;
-    border: solid 3px #d569f6;
+    border: solid 4px #d569f6;
+}
+
+.right-header-container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 4vh;
+}
+
+.header-buttons {
+    width: 18vh;
+    height: 4vh;
+    background-color: #6c1fd3;
+    border: solid 4px #d569f6;
+    color: #ffbcff;
+    font-family: "Press Start 2P";
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
+} 
+.header-buttons:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
 }
 
 .content-container {
     display: grid;
     background-color: #040026 ;
     border: solid 8px #6c1fd3;
-
     color:#00f3fc;
     padding: 2vh;
     grid-template-areas: 
@@ -181,25 +274,26 @@ img {
 
 .card-title {
     margin-bottom: 1vh;
+    font-size: 20px;
 }
 
 .card-description {
     font-size: smaller;
     color: #ffbcff;
-    margin-bottom: 6vh;
+    margin-bottom: 4vh;
 }
 
 .content-cards-container {
     display: grid;
     grid-template-columns: repeat(2, 60vh);
     grid-template-rows: repeat(3, 20vh);
-    row-gap: 7vh;
+    row-gap: 6vh;
     position: absolute;
 }
 
 .content-card {
     display: flex;
-    height: 20vh;
+    height: 19vh;
     width: 50vh;
     flex-direction: column;
     -webkit-transition: -webkit-transform 0.1s;
@@ -224,12 +318,46 @@ img {
     column-gap: 2vh;
 }
 
+.card-icons {
+    height: 26px;
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
+} 
+
+.card-icons:hover {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
+}
+
 .top-right-content {
     grid-area: top-right;
 }
 
-.bottom-right-content {
-    grid-area: bottom-right;
+.top-side-description {
+    margin: 0;
+}
+
+.side-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quote {
+    font-size: 18px;
+}
+
+.author {
+    display: flex;
+    justify-content: flex-end;
 }
 
 

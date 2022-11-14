@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Press+Start+2P");
 
 html, body {
     height: 100vh;
@@ -7,20 +7,29 @@ html, body {
     border: 0;
     padding: 0;
     overflow: hidden;
-    font-family: Roboto;
+    font-family: "Press Start 2P";
 }
 
 body {
     display: grid;
     grid-template-columns: 30vh auto;
-    grid-auto-rows: 10vh auto;
+    grid-auto-rows: 14vh auto;
     grid-template-areas: 
     "sidebar header"
     "sidebar content"
 }
 
+img {
+    aspect-ratio: 1/1;
+}
+
 .sidebar-container {
-    background-color: aqua;
+    background-color: #0097ec;
+    border-right: solid 8px #040026;
+    border-top: solid 8px #00f3fc;
+    border-bottom: solid 8px#00f3fc ;
+    border-left: solid 8px #040026;
+    color:#004bc0 ;
     grid-area: sidebar;
     padding-left: 2vh;
     padding-top: 2vh;
@@ -37,9 +46,10 @@ body {
 }
 
 .sidebar-title {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     grid-area: sidebar-title;
+    color: #040026;
 }
 
 
@@ -59,13 +69,15 @@ body {
 
 
 .header-container {
-    background-color: pink;
+    background-color: #ffbcff;
+    color: #040026;
+    border: solid 8px#6c1fd3 ;
+    padding: 15px;
     grid-area: header;
     display: grid;
     grid-template-areas:
     "searchbar preview"
     "bottom bottom";
-    width: 100%;
     justify-content: space-between;
 }
 
@@ -90,13 +102,75 @@ body {
 }
 
 .content-container {
-    background-color: brown;
-    grid-area: content;
+    display: grid;
+    background-color: #040026 ;
+    border-bottom: solid 8px #6c1fd3;
+    border-right: solid 8px #6c1fd3;;
+    border-left: solid 8px #6c1fd3;
+    color:#00f3fc;
+    padding: 2vh;
+    grid-template-areas: 
+    "main top-right"
+    "main bottom-right";
+    grid-template-columns: 125vh 40vh;
+    justify-content: center;
+}
+
+.main-content {
+    grid-area: main;
+}
+
+.content-title {
+    margin-bottom: 2vh;
 }
 
 .card {
-    background-color: white;
-    height: 10vh;
-    width: 8vh;
-    margin-bottom: 2px;
+    background-color:#d569f6;
+    color: #004bc0 ;
+    border-left: solid 12px#6c1fd3;
+    padding: 10px;
+    padding-right: 25px;
+    height: 30vh;
+    width: 30vh;
+    justify-items: center;
 }
+
+.card-title {
+    margin-bottom: 1vh;
+}
+
+.card-description {
+    font-size: smaller;
+    color: #ffbcff;
+    margin-bottom: 6vh;
+}
+
+.content-cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 60vh);
+    grid-template-rows: repeat(3, 20vh);
+    row-gap: 7vh;
+}
+
+.content-card {
+    display: flex;
+    height: 20vh;
+    width: 50vh;
+    flex-direction: column;
+}
+
+.card-images {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 2vh;
+}
+
+.top-right-content {
+    grid-area: top-right;
+}
+
+.bottom-right-content {
+    grid-area: bottom-right;
+}
+
+

@@ -25,13 +25,13 @@ img {
 
 .sidebar-container {
     background-color: #0097ec;
-    border-right: solid 8px #040026;
-    border-top: solid 8px #00f3fc;
-    border-bottom: solid 8px#00f3fc ;
-    border-left: solid 8px #040026;
-    color:#004bc0 ;
+    border-left: solid 12px #040026;
+    border-right: solid 12px #040026;
+    border-top: solid 12px #00f3fc;
+    border-bottom: solid 12px#00f3fc ;
+    color:#040026;
     grid-area: sidebar;
-    padding-left: 2vh;
+    padding-left: 1vh;
     padding-top: 2vh;
     display: grid;
     grid-template-columns: 4vh;
@@ -46,7 +46,7 @@ img {
 }
 
 .sidebar-title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     grid-area: sidebar-title;
     color: #040026;
@@ -59,20 +59,39 @@ img {
     flex-direction: column;
     gap: 4vh;
     height: 100%;
+    margin-top: 10vh;
+    margin-left: 3vh;
+    position:absolute
 }
 
 .sidebar-element {
     display: flex;
     column-gap: 1vh;
     align-items: center;
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
+} 
+
+.sidebar-element:hover {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
 }
 
 
+
 .header-container {
-    background-color: #ffbcff;
-    color: #040026;
-    border: solid 8px#6c1fd3 ;
-    padding: 15px;
+    background-color: #004bc0 ;
+    color: #d569f6;
+    border: solid 8px #0097ec  ;
+    padding: 4px 60px;
     grid-area: header;
     display: grid;
     grid-template-areas:
@@ -87,6 +106,15 @@ img {
 
 .preview-container {
     grid-area: preview;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 4vh;
+}
+
+.preview-images {
+    height: 40px;
+    border: solid 2px #d569f6;
 }
 
 .bottom-header-container {
@@ -94,19 +122,35 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .left-header-container {
     display: flex;
     flex-direction: row;
+    column-gap: 2vh;
+    align-items: center;
+}
+
+.greeter {
+    font-size: larger;
+}
+
+.profile-name {
+    font-size: xx-large;
+    color: #ffbcff;
+}
+
+.big-profile-picture {
+    height: 56px;
+    border: solid 3px #d569f6;
 }
 
 .content-container {
     display: grid;
     background-color: #040026 ;
-    border-bottom: solid 8px #6c1fd3;
-    border-right: solid 8px #6c1fd3;;
-    border-left: solid 8px #6c1fd3;
+    border: solid 8px #6c1fd3;
+
     color:#00f3fc;
     padding: 2vh;
     grid-template-areas: 
@@ -126,7 +170,7 @@ img {
 
 .card {
     background-color:#d569f6;
-    color: #004bc0 ;
+    color:#6c1fd3;
     border-left: solid 12px#6c1fd3;
     padding: 10px;
     padding-right: 25px;
@@ -150,6 +194,7 @@ img {
     grid-template-columns: repeat(2, 60vh);
     grid-template-rows: repeat(3, 20vh);
     row-gap: 7vh;
+    position: absolute;
 }
 
 .content-card {
@@ -157,6 +202,20 @@ img {
     height: 20vh;
     width: 50vh;
     flex-direction: column;
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
+} 
+.content-card:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -ms-transition:  -ms-transform 0.1s;
+    transition:  transform 0.1s;
 }
 
 .card-images {

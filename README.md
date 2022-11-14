@@ -1,4 +1,4 @@
-# admin-dashboard
+# yajyboard
 A mock dashboard made using CSS Grid (mostly) as part of The Odin Project curriculum.
 
 Live Preview: https://ohboh.github.io/admin-dashboard/
